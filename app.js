@@ -76,7 +76,16 @@ function setPlaybackRate(value){
  showPlaybackRate(value);
 }
 
-function normalSpeed(){
+function normalSpeed(value){
   var player = document.querySelector("audio");
-  
+  player.playbackRate = 1;
 }
+
+function onNomalSpeedClicked(event){
+  var rate = playbackRateControl.value;
+  setPlaybackRate(rate);
+};
+
+var playbackRateControl =
+ document.querySelector("#nomal-speed");
+ playbackRateControl.addEventListener("click", onNomalSpeedButtonClicked);
